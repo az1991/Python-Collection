@@ -1,3 +1,4 @@
+# Must be updated here, I believe the new API doesn't allow this to work
 from bs4 import BeautifulSoup
 import time
 import requests
@@ -7,6 +8,7 @@ from pushbullet import Listener
 
 # Your Pushbullet API Key
 pb = Pushbullet("*******")
+
 
 # Target Device Name
 device = pb.get_device('*******')
