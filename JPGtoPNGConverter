@@ -1,0 +1,21 @@
+# This file takes image files from the files directory and destination directory
+# using the command line and converts them to PNG
+
+import sys
+import os
+from PIL import Image
+
+files_directory = "./"+ str(sys.argv[1])
+dest_directory = "./"+ str(sys.argv[2])
+
+
+if not os.path.exists(dest_directory):
+    os.mkdir(dest_directory)
+
+
+file_list = os.listdir(files_directory)
+for n in file_list:
+    img = Image.open(f'{files_directory}/{n}')
+    img.save(f'{dest_directory}/{n.replace(".jpg",".png")}', 'png')
+
+print("Done!")
